@@ -39,4 +39,9 @@ public class MeiboBean {
     public void setName(String name) {
         this.name = name;
     }
+    
+    public String next(){
+        System.out.println(this.number + " " + this.name);
+        return "output.xhtml";
+    }
 }

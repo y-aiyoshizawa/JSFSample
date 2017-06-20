@@ -9,8 +9,8 @@
         <h2>名簿データの作成</h2>
         <h:form>
             番号:<h:inputText value="#{meiboBean.number}" />
-            番号:<h:inputText value="#{meiboBean.name}" />
-            <h:commandButton value="送信" actionListener="#{meiboBean.toConsole()}"/>
+            氏名:<h:inputText value="#{meiboBean.name}" />
+            <h:commandButton value="送信" action="#{meiboBean.next()}"/>
         </h:form>
     </h:body>
 </html>
