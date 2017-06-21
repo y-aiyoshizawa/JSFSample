@@ -19,8 +19,14 @@
     <h:body>
         <h2>名簿データの作成</h2>
         <h:form>
-            番号:<h:inputText value="#{meiboBean.number}" /><br/>
-            氏名:<h:inputText value="#{meiboBean.name}" /><br/>
+            <h:panelGrid columns="3">
+                番号:
+                <h:inputText id="number" value="#{meiboBean.number}" required="true" label="番号"/>
+                <h:message for="number"></h:message>
+                
+                氏名:
+                <h:inputText value="#{meiboBean.name}" />
+            </h:panelGrid>
             <h:commandButton class="uk-button" value="送信" action="#{meiboBean.next()}"/>
         </h:form>
     </h:body>
