@@ -1,17 +1,21 @@
 package beans;
 
+import java.util.logging.Logger;
+import javax.ejb.EJB;
 import javax.enterprise.context.RequestScoped;
+import javax.inject.Inject;
 import javax.inject.Named;
+import javax.validation.constraints.NotNull;
 
 @Named
 @RequestScoped
 public class MeiboBean {
     private Integer number;
     private String name;
-
-    public void toConsole(){
-        System.out.println(this.number + " " + this.name);
-    }
+//    @EJB
+//    EmployeeDB db;
+//    @Inject
+//    transient Logger log;
     /**
      * @return the number
      */
@@ -41,7 +45,21 @@ public class MeiboBean {
     }
     
     public String next(){
-        System.out.println(this.number + " " + this.name);
+        //create();
         return "output.xhtml";
+    }
+    
+//    public void create(){
+//        Employee emp = new Employee(number,name);
+//        try{
+//            db.create(emp);
+//            clear();
+//        }catch(Exception e){
+////            log.severe("失敗");
+//        }
+//    }
+    public void clear(){
+        number = null;
+        name = null;
     }
 }
