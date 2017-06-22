@@ -12,8 +12,8 @@ import javax.validation.constraints.NotNull;
 public class MeiboBean {
     private Integer number;
     private String name;
-//    @EJB
-//    EmployeeDB db;
+    @EJB
+    EmployeeDB db;
 //    @Inject
 //    transient Logger log;
     /**
@@ -45,19 +45,20 @@ public class MeiboBean {
     }
     
     public String next(){
-        //create();
+        create();
         return "output.xhtml";
     }
     
-//    public void create(){
-//        Employee emp = new Employee(number,name);
-//        try{
-//            db.create(emp);
-//            clear();
-//        }catch(Exception e){
-////            log.severe("失敗");
-//        }
-//    }
+    public void create(){
+        Employee emp = new Employee(number,name);
+        try{
+            db.create(emp);
+            System.out.println("成功");
+        }catch(Exception e){
+            //log.severe("失敗");
+            System.out.println("失敗");
+        }
+    }
     public void clear(){
         number = null;
         name = null;
